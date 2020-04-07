@@ -1,0 +1,15 @@
+<h1> <%= @user.name %>'s Page <h1> <br>
+
+ <h2> Recipes Created <h2>
+
+ <ul>
+
+<% @users.each do |user| %>
+<%= user.name %>
+<% end %>
+
+
+ </ul>
+
+<%= button_to "Delete User",  user_path, method: :delete %>
+ 

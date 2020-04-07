@@ -1,0 +1,12 @@
+<h1>Create a new Recipe</h1>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label "Title:" %>
+  <%= f.text_field :title %>
+  <%= f.label "User:" %>
+  <%= f.collection_select @user, User.all, :id, :name %>
+
+  <%= f.submit %>
+<% end %><br>
+
+<%= button_to "Back", recipes_path, method: :get %>

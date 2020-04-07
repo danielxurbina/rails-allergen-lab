@@ -1,0 +1,19 @@
+<h1> All Recipes </h1>
+
+<%= button_to "Create a Recipe", new_recipe_path, method: :get %>
+
+<ul>
+  <% if @ordered_recipes != [] %>
+    <h2>Sorted List of Recipes</h2>
+    <% @ordered_recipes.each do |recipe| %>
+      <li><%= recipe.title %></li>
+    <% end %>
+  <% else %> 
+    <h2> Unsorted List of Recipes </h2>
+    <% @recipes.each do |recipe| %>
+      <li><%= recipe.title %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h3>Sort Recipes by most Ingredients</h3>

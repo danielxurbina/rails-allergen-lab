@@ -1,0 +1,19 @@
+<h1> Create A User <h1>
+
+<ul>
+
+<%= form_for @user do |f| %>
+<%= f.label "Name:"  %>
+<%= f.text_field :name %>
+
+<%= f.label "Ingredient:" %>
+<%= f.collection_select :ingredient_id, Ingredient.all, :id, :name, {prompt: 'Please Select An Ingredient'}%>
+
+<%= f.label "Recipe: " %>
+<%= f.collection_select :recipe_id, Recipe.all, :id, :title, {prompt: 'Please Select A Recipe'} %>
+
+<%= f.submit %>
+
+<% end %>
+
+<ul>
